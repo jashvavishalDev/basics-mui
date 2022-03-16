@@ -3,7 +3,7 @@ import{ makeStyles, withStyles} from '@material-ui/core';
 
 //makeStyles & withStyles
 
-const useStyles= makeStyles({
+const style= {
     sideMenu:{
         display: 'flex',
         flexDirection: 'column',
@@ -13,12 +13,11 @@ const useStyles= makeStyles({
         height: '100vw',
         backgroundColor: '#253053'
     }
-})
+}
 
-export default function SideMenu(){
+const SideMenu = (props)=>{
 
-    const classes = useStyles();
-    console.log(classes)
+    const {classes} = props;
 
     return(
        <div className={classes.sideMenu}>
@@ -27,3 +26,4 @@ export default function SideMenu(){
        </div>
     );
 }
+export default withStyles(style)(SideMenu);
